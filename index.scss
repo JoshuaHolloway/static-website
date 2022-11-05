@@ -1,3 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
-  background: red;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  z-index: 9;
+  position: fixed;
+  left: 0;
+  height: 80px;
+  width: 100vw;
+  padding: 0 2rem;
+  background: rgba(255, 255, 255, 0.3);
+
+    .container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      nav.navlinks {
+
+        .navlink {
+          transition: color 0.25s ease;
+          cursor: pointer;
+        }
+        .navlink:not(:nth-child(1)) {
+          margin-left: 30px;
+        }
+        .navlink:hover {
+          color: white;
+        }
+      }
+    }
+
+}
+
+section#hero {
+  min-height: 100vh;
+  background: lightgray;
+  color: white;
+  display: grid;
+  place-items: center;
+  background-image: url('./AdobeStock_11872982_MozJPEG.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .left {
+    background: rgba(255, 0, 0, 0.5);
+
+  }
+  .right {
+    font-size: 2rem;
+  }
+
+}
+section#features {}
+section#categories {}
+section#faq {}
+section#testimonials {}
+section#contact {}
+
+footer {
+  height: 80px;
+  background: white;
 }
