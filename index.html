@@ -7,6 +7,7 @@
   <title>Static Website</title>
   <link rel="stylesheet" href="./index.css">
   <script src="./index.js" type="module"></script>
+  <script src="./web-comps/card.js"></script> 
 </head>
 <body>
   
@@ -29,9 +30,15 @@
 
       <div class="left">
         <div class="container">
-          <h1 class="title">Static Website</h1>
-          <h2 class="sub-title">Sub Title</h2>
-          <p class="description">Paragraph...</p>
+          <h2 class="super-title">Local Business </h2>
+          <h1 class="title">
+            <p>Static</p>
+            <p>Website</p
+          </h1>
+          <div class="btn-container">
+            <div class="btn primary">Button 1</div>
+            <div class="btn secondary">Button 2</div>
+          </div>
         </div>
       </div>
 
@@ -40,17 +47,22 @@
       </div>
     </section>
 
-    <section id="features">Features</section>
-    <section id="categories">Categories</section>
-    <section id="faq">FAQ</section>
-    <section id="testimonials">Testimonials</section>
-    <section id="contact">Contact</section>
+    <section id="features">
+      <card-comp></card-comp>
+      <card-comp></card-comp>
+      <card-comp></card-comp>
+
+    </section>
+    <!-- <section id="categories">Categories</section> -->
+    <!-- <section id="faq">FAQ</section> -->
+    <!-- <section id="testimonials">Testimonials</section> -->
+    <!-- <section id="contact">Contact</section> -->
   </main>
 
-  <footer>
+  <!-- <footer>
     <div class="container">
       © <span id="year">2022</span> Static Website
     </div>
-  </footer>
+  </footer> -->
 </body>
 </html>

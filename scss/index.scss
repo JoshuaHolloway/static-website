@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import 'scrollbar';
 
+$primary: #32A44E;
+$secondary: #E34D1B;
+$primary-light: hsl(128, 65%, 95%);
+
+$radius: 5px;
+:root {
+  --radius: #{$radius};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --primary-light: #{$primary-light};
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,6 +21,45 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
+
+.btn {
+  &.primary {
+    background: $primary;
+  }
+  &.secondary {
+    background: $secondary;
+  }
+  opacity: 1;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 0.85rem;
+  padding: 0.7rem 1rem;
+  border-radius: $radius;
+  cursor: pointer;
+  $duration: 0.2s;
+  transition: color $duration ease, transform $duration ease, opacity $duration ease;;
+
+  // Shadow:
+  $horizontal-offset: 0;
+  $vertical-offset: 7px;
+  $blur: 20px;
+  $spread: 0;
+  $color: rgba(0, 0, 0, 0.2);
+  box-shadow: $horizontal-offset $vertical-offset $blur $spread $color; 
+
+}
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+
+  $horizontal-offset: 0;
+  $vertical-offset: 7px;
+  $blur: 30px;
+  $spread: 0;
+  $color: rgba(0, 0, 0, 0.2);
+  box-shadow: $horizontal-offset $vertical-offset $blur $spread $color;
+}
+
 
 header {
   z-index: 9;
@@ -54,7 +105,7 @@ section#hero {
   }
  
 
-  min-height: 100vh;
+  min-height: 60vh;
   background: lightgray;
   color: white;
   display: grid;
@@ -76,16 +127,27 @@ section#hero {
     z-index: 1;
 
     .container {
-      line-height: normal;
+      * {
+        line-height: 1;
+      }
+      h2.super-title {
+        font-size: 1.6rem;
+        margin: 0 0 0.6rem 0;
+        text-decoration: underline;
+        font-weight: 300;
+      }
       h1.title {
         font-size: 2.5em;
+        font-weight: 500;
         margin: 0 0 0rem 0;
+        p {
+          margin: 0;
+          &:first-child {
+            margin-bottom: 0.5rem;
+          }
+        }
       }
-      h2.sub-title {
-        font-size: 2rem;
-        margin: 0 0 0rem 0;
-      }
-      p.description {
+      .btn-container {
       }
     }
   }
@@ -98,7 +160,14 @@ section#hero {
   }
 
 }
-section#features {}
+section#features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 3rem;
+  
+
+}
 section#categories {}
 section#faq {}
 section#testimonials {}
@@ -106,5 +175,12 @@ section#contact {}
 
 footer {
   height: 80px;
-  background: white;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+
+  }
 }
